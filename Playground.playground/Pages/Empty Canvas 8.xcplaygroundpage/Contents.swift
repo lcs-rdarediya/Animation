@@ -4,7 +4,7 @@
  
  Set the size of your desired canvas by adjusting the constants on lines 7 and 8.
  */
-let preferredWidth = 600
+let preferredWidth = 400
 let preferredHeight = 600
 /*:
  ## Required code
@@ -40,12 +40,10 @@ PlaygroundPage.current.liveView = canvas
  
  */
 
-// Move the origin from the bottom-left corner of the canvas to it's centre point
-canvas.translate(to: Point(x: canvas.width / 2,
-                           y: canvas.height / 2))
+
 
 // Show a grid
-canvas.drawAxes(withScale: true, by: 20, color: .black)
+canvas.drawAxes(withScale: true, by: 25, color: .black)
 
 /*:
  ## Add your code
@@ -55,23 +53,54 @@ canvas.drawAxes(withScale: true, by: 20, color: .black)
  [Documentation](http://russellgordon.ca/CanvasGraphics/Documentation/) is available.
 
  */
+//ears-body- feet - paw - head - arms - eyes - nose- mouth 
 
-// Begin writing your code below (you can remove the examples shown)
+//draw right ear
 
-// Draw a circle, using the canvas object directly
-canvas.drawEllipse(at: Point(x: 100, y: 100), width: 25, height: 25)
+canvas.drawEllipse(at: Point(x: 270, y: 450), width: 45, height: 45)
 
-// Draw a vertical line, up and to the left
-p.drawTo(dx: -25, dy: 50)
 
-// Go back to origin
-p.goToOrigin()
+//draw left ear
 
-// Change the pen color
-p.penColor = .red
+canvas.drawEllipse(at: Point(x: 130, y: 450), width: 45, height: 45)
 
-// Draw a curve, down and to the right
-p.addArc(radius: 50, angle: -45)
+// draw the body
+canvas.fillColor = .white
+canvas.drawEllipse(at: Point(x: 200, y: 265), width: 240, height: 260)
+
+//draw the feet
+canvas.fillColor = .black
+
+canvas.drawEllipse(at: Point(x: 150, y: 170), width: 40, height: 50)
+
+canvas.drawEllipse(at: Point(x: 250, y: 170), width: 40, height: 50)
+
+//draw head
+
+canvas.fillColor = .white
+
+canvas.drawEllipse(at: Point(x: 200, y: 400), width: 200, height: 140)
+
+// left arm
+
+canvas.fillColor = .black
+
+canvas.drawEllipse(at: Point(x: 100, y: 275), width: 40, height: 120)
+
+//right arm
+
+
+canvas.drawEllipse(at: Point(x: 300, y: 275), width: 40, height: 120)
+
+// face
+
+canvas.drawEllipse(at: Point(x: 160, y: 420), width: 30, height: 30)
+
+canvas.drawEllipse(at: Point(x: 240, y: 420), width: 30, height: 30)
+
+canvas.drawEllipse(at: Point(x: 200, y: 380), width: 20, height: 30)
+
+canvas.drawEllipse(at: Point(x: 200, y: 350), width: 40, height: 4)
 
 /*:
  ## Show the Live View

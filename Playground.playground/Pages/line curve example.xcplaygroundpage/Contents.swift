@@ -4,8 +4,8 @@
  
  Set the size of your desired canvas by adjusting the constants on lines 7 and 8.
  */
-let preferredWidth = 600
-let preferredHeight = 600
+let preferredWidth = 400
+let preferredHeight = 400
 /*:
  ## Required code
  
@@ -40,12 +40,8 @@ PlaygroundPage.current.liveView = canvas
  
  */
 
-// Move the origin from the bottom-left corner of the canvas to it's centre point
-canvas.translate(to: Point(x: canvas.width / 2,
-                           y: canvas.height / 2))
-
 // Show a grid
-canvas.drawAxes(withScale: true, by: 20, color: .black)
+canvas.drawAxes(withScale: true, by: 50, color: .black)
 
 /*:
  ## Add your code
@@ -58,21 +54,29 @@ canvas.drawAxes(withScale: true, by: 20, color: .black)
 
 // Begin writing your code below (you can remove the examples shown)
 
-// Draw a circle, using the canvas object directly
-canvas.drawEllipse(at: Point(x: 100, y: 100), width: 25, height: 25)
+// A loop to express the 0, 50, 100,150... pattern
 
-// Draw a vertical line, up and to the left
-p.drawTo(dx: -25, dy: 50)
+for somevalue in stride(from: 0,
+                        through: 400,
+                        by: 50){
 
-// Go back to origin
-p.goToOrigin()
+// draw the line from and to the points shown in our plan
+    canvas.drawLine(from: Point(x: somevalue, y: 0),
+                    to: Point(x: 400, y: somevalue))
+    
+    canvas.drawLine(from: Point(x: somevalue, y: 400),
+                    to: Point(x: 0, y: somevalue))
+   
+    canvas.drawLine(from: Point(x: somevalue, y:0),
+                    to: Point(x: 0, y: 400 - somevalue))
+    
+    canvas.drawLine(from: Point(x: somevalue, y: 400),
+                    to: Point(x: 400, y: 400 - somevalue))
+}
+    
 
-// Change the pen color
-p.penColor = .red
-
-// Draw a curve, down and to the right
-p.addArc(radius: 50, angle: -45)
-
+        
+canvas.highPerformance = false
 /*:
  ## Show the Live View
  Don't see any results?
