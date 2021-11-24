@@ -53,7 +53,24 @@ canvas.drawAxes(withScale: true, by: 25, color: .black)
  [Documentation](http://russellgordon.ca/CanvasGraphics/Documentation/) is available.
 
  */
-//ears-body- feet - paw - head - arms - eyes - nose- mouth 
+// backgorund
+
+canvas.highPerformance = true
+
+for someValue in stride(from: 0, through: 600, by: 1){
+let currentcolor = Color(hue: 120 ,
+                        saturation: 120,
+                        brightness: someValue,
+                        alpha: 100)
+    
+    canvas.lineColor = currentcolor
+    
+canvas.drawLine(from: Point(x: 0, y: someValue), to: Point(x: 600, y: someValue))
+    
+    
+    
+}
+canvas.highPerformance = false
 
 //draw right ear
 
@@ -71,9 +88,9 @@ canvas.drawEllipse(at: Point(x: 200, y: 265), width: 240, height: 260)
 //draw the feet
 canvas.fillColor = .black
 
-canvas.drawEllipse(at: Point(x: 150, y: 170), width: 40, height: 50)
+canvas.drawEllipse(at: Point(x: 150, y: 150), width: 40, height: 50)
 
-canvas.drawEllipse(at: Point(x: 250, y: 170), width: 40, height: 50)
+canvas.drawEllipse(at: Point(x: 250, y: 150), width: 40, height: 50)
 
 //draw head
 
