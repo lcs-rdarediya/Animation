@@ -6,9 +6,7 @@
         <page name='t shirt'/>
         <page name='line curve example'/>
         <page name='nested loops example'/>
-        <page name='conditional statements'/>
-        <page name='Empty Canvas 7'/>
-        <page name='Empty Canvas 8'/>
+        <page name='panda scene'/>
         <page name='Empty Canvas 9'/>
         <page name='Empty Canvas 10'/>
         <page name='Empty Canvas 11'/>
@@ -18,5 +16,6 @@
         <page name='Empty Canvas 15'/>
         <page name='Blank canvas to copy'/>
         <page name='gig post remake'/>
+        <page name='Conditional statements'/>
     </pages>
 </playground>

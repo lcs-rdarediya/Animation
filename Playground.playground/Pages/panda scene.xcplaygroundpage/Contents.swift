@@ -16,7 +16,6 @@ let preferredHeight = 600
 import Cocoa
 import PlaygroundSupport
 import CanvasGraphics
-import OpenGL
 
 // Create canvas
 let canvas = Canvas(width: preferredWidth, height: preferredHeight)
@@ -41,13 +40,10 @@ PlaygroundPage.current.liveView = canvas
  
  */
 
-// Move the origin from the bottom-left corner of the canvas to it's centre point
-canvas.translate(to: Point(x: 0,
-                           y: 0))
+
 
 // Show a grid
-canvas.drawAxes(withScale: true, by: 50, color: .black)
-
+canvas.drawAxes(withScale: true, by: 25, color: .black)
 
 /*:
  ## Add your code
@@ -57,45 +53,71 @@ canvas.drawAxes(withScale: true, by: 50, color: .black)
  [Documentation](http://russellgordon.ca/CanvasGraphics/Documentation/) is available.
  
  */
-//making a loop
+// backgorund
 
 canvas.highPerformance = true
+
 for someValue in stride(from: 0, through: 600, by: 1){
+    let currentcolor = Color(hue: 120 ,
+                             saturation: 120,
+                             brightness: someValue,
+                             alpha: 100)
     
-    canvas.lineColor = Color(hue: 110, saturation: 80, brightness: 0, alpha: 100)
+    canvas.lineColor = currentcolor
     
     canvas.drawLine(from: Point(x: 0, y: someValue), to: Point(x: 600, y: someValue))
-}
-
-for verticalposition in stride(from:-40, through: 400, by: 40){
-    for horizontalposition in stride(from: -40, through: 400, by: 40){
-        canvas.fillColor = Color(hue: 110, saturation: 54, brightness: 72, alpha: 100)
-        
-        canvas.drawEllipse(at: Point(x: horizontalposition, y: verticalposition), width: 36, height: 36)
-        
-        
-        
-for xValue in stride(from: 1,
-                             through: 600,
-                             by: 1){
-            
-    let currentColor = Color(hue: 110,
-                            saturation: 54,
-                            brightness: 72,
-                            alpha: 100)
-        canvas.lineColor = currentColor
-        canvas.drawLine(from: Point (x: xValue, y: 400), to: Point (x: xValue, y: 600))
-            
-}
-        
-    }
+    
+    
     
 }
 canvas.highPerformance = false
 
+//draw right ear
+
+canvas.drawEllipse(at: Point(x: 270, y: 450), width: 45, height: 45)
 
 
+//draw left ear
 
+canvas.drawEllipse(at: Point(x: 130, y: 450), width: 45, height: 45)
+
+// draw the body
+canvas.fillColor = .white
+canvas.drawEllipse(at: Point(x: 200, y: 265), width: 240, height: 260)
+
+//draw the feet
+canvas.fillColor = .black
+
+canvas.drawEllipse(at: Point(x: 150, y: 150), width: 40, height: 50)
+
+canvas.drawEllipse(at: Point(x: 250, y: 150), width: 40, height: 50)
+
+//draw head
+
+canvas.fillColor = .white
+
+canvas.drawEllipse(at: Point(x: 200, y: 400), width: 200, height: 140)
+
+// left arm
+
+canvas.fillColor = .black
+
+canvas.drawEllipse(at: Point(x: 100, y: 275), width: 40, height: 120)
+
+//right arm
+
+
+canvas.drawEllipse(at: Point(x: 300, y: 275), width: 40, height: 120)
+
+// face
+
+canvas.drawEllipse(at: Point(x: 160, y: 420), width: 30, height: 30)
+
+canvas.drawEllipse(at: Point(x: 240, y: 420), width: 30, height: 30)
+
+canvas.drawEllipse(at: Point(x: 200, y: 380), width: 20, height: 30)
+
+canvas.drawEllipse(at: Point(x: 200, y: 350), width: 40, height: 4)
 
 /*:
  ## Show the Live View
