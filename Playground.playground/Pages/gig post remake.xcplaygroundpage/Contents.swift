@@ -84,8 +84,8 @@ for verticalposition in stride(from:0, through: 400, by: 40){
             horizontalposition == 400 ||
             verticalposition == 0 ||
             verticalposition == 400 ||
-            //white cicles
-            horizontalposition + verticalposition > 40
+            //white circles
+            horizontalposition + verticalposition > 400
         {
             
             canvas.fillColor = Color(hue: 110, saturation: 54, brightness: 72, alpha: 100)
@@ -100,9 +100,28 @@ for verticalposition in stride(from:0, through: 400, by: 40){
         
         
         
-        
-        
     }
+    
+    //text
+    
+    canvas.drawText(message: "pixies", at: Point(x: 20, y: 420), size: 50, kerning: 0)
+    
+    canvas.drawText(message: "9 pm over 21", at: Point(x: 20, y: 510), size: 10, kerning: 0)
+    
+    canvas.drawText(message: "december 13 1986", at: Point(x: 20, y: 525), size: 10, kerning: 0)
+    
+    canvas.drawText(message: "saturday", at: Point(x: 20, y: 540), size: 10, kerning: 0)
+    
+    canvas.drawText(message: "at the rat", at: Point(x: 280, y: 540), size: 10, kerning: 0)
+    
+    canvas.drawText(message: "528 common wealth", at: Point(x: 280, y: 525), size: 10, kerning: 0)
+    
+    canvas.drawText(message: "boston, mass.", at: Point(x: 280, y: 510), size: 10, kerning: 0)
+    
+    canvas.drawText(message: "with", at: Point(x: 280, y: 450), size: 15, kerning: 0)
+    
+    canvas.drawText(message: "throwing muses", at: Point(x: 280, y: 435), size: 15, kerning: 0)
+    canvas.drawText(message: "big dipper", at: Point(x: 280, y: 420), size: 15, kerning: 0)
     
 }
 canvas.highPerformance = false
