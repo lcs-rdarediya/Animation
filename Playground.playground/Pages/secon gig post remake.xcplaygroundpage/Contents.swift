@@ -6,13 +6,6 @@
  */
 let preferredWidth = 400
 let preferredHeight = 600
-
-
-
-
-
-
-
 /*:
  ## Required code
  
@@ -38,7 +31,6 @@ PlaygroundPage.current.liveView = canvas
 
 
 
-
 // Show a grid
 canvas.drawAxes(withScale: true, by: 50, color: .black)
 
@@ -50,43 +42,47 @@ canvas.drawAxes(withScale: true, by: 50, color: .black)
  [Documentation](http://russellgordon.ca/CanvasGraphics/Documentation/) is available.
 
  */
-//let fill color
-canvas.highPerformance = true
 
-canvas.drawShapesWithFill = true
-canvas.fillColor = .black
-
-//custom shapes with absolute coordinates
-//1. make a list of the vertices
-var triangleVertices: [Point] = [] //empty list of point instances
-triangleVertices.append(Point(x: 0, y: 50))
-triangleVertices.append(Point(x: 50, y: 50))
-triangleVertices.append(Point(x: 25, y: 60))
-// begin wrting your code below
+//begin writing my code
 
 
-for xPosition in stride(from: 0, through: 350, by: 50){
+
+
+canvas.fillColor = Color(hue: 25,
+                         saturation: 100,
+                         brightness: 90,
+                         alpha: 100)
+
+canvas.drawRectangle(at: Point(x: 0, y: 0), width: 400, height: 600)
+
+// Show a grid
+canvas.drawAxes(withScale: true, by: 50, color: .black)
+
+canvas.textColor = Color(hue: 200,
+                         saturation: 0,
+                         brightness: 80,
+                         alpha: 100)
+canvas.drawText(message: "talking heads", at: Point(x: 20, y: 139), size: 43, kerning: 0)
+canvas.drawText(message: "friday, saturday, sunday", at: Point(x: 20, y: 30), size: 9, kerning: 0)
+canvas.drawText(message: "at cgb and omfug", at: Point(x: 150, y: 30), size: 9, kerning: 0)
+canvas.drawText(message: "also appearing", at: Point(x: 280, y: 30), size: 9, kerning: 0)
+
+canvas.drawText(message: "september 12, 13, 14 1975", at: Point(x: 20, y: 20), size: 9, kerning: 0)
+
+canvas.drawText(message: "315 bowery, new york city", at: Point(x: 150, y: 20), size: 9, kerning: 0)
+
+canvas.drawText(message: "from brooklyn, the shirts", at: Point(x: 280, y: 20), size: 9, kerning: 0)
+
+
+
+// triangles
+
+//for Xposition in stride(from:200, through: 600, by: 45){
     
-    for yPosition in stride(from: 0, through: 550, by: 50){
-
-//draw anchor
-
-canvas.fillColor = .red
-canvas.drawEllipse(at: Point(x: xPosition, y: yPosition), width: 5, height: 5)
-
+    //for Yposition in stride(from: 200, through: 600, by: 45){
         
-        //draw tilted rectangles
-        canvas.fillColor = .blue
-    
-        var rectanglevertices: [Point] = []
-        rectanglevertices.append(Point(x: xPosition + 0, y: yPosition + 30)) //A
-        rectanglevertices.append(Point(x: xPosition + 20, y: yPosition + 50)) //B
-        rectanglevertices.append(Point(x: xPosition + 50, y: yPosition + 20)) //C
-        rectanglevertices.append(Point(x: xPosition + 30, y: yPosition + 0)) //D
-        canvas.drawCustomShape(with: rectanglevertices)
-    }
-}
-canvas.highPerformance = false
+//    }
+//  }
 /*:
  ## Show the Live View
  Don't see any results?
@@ -102,3 +98,4 @@ canvas.highPerformance = false
  
  ![source_control](source-control.png "Source Control")
  */
+

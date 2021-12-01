@@ -45,8 +45,7 @@ PlaygroundPage.current.liveView = canvas
 canvas.translate(to: Point(x: 0,
                            y: 0))
 
-// Show a grid
-canvas.drawAxes(withScale: true, by: 50, color: .black)
+
 
 
 /*:
@@ -124,6 +123,10 @@ for verticalposition in stride(from:0, through: 400, by: 40){
     canvas.drawText(message: "big dipper", at: Point(x: 280, y: 420), size: 15, kerning: 0)
     
 }
+// Show a grid
+canvas.drawAxes(withScale: true, by: 50, color: .black)
+
+
 canvas.highPerformance = false
 
 
