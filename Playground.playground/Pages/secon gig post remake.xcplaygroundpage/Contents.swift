@@ -1,6 +1,6 @@
 //: [Previous](@previous) / [Next](@next)
 /*:
-## Canvas size
+ ## Canvas size
  
  Set the size of your desired canvas by adjusting the constants on lines 7 and 8.
  */
@@ -16,6 +16,7 @@ let preferredHeight = 600
 import Cocoa
 import PlaygroundSupport
 import CanvasGraphics
+import Darwin
 
 // Create canvas
 let canvas = Canvas(width: preferredWidth, height: preferredHeight)
@@ -38,12 +39,25 @@ canvas.drawAxes(withScale: true, by: 50, color: .black)
  ## Add your code
  
  Beginning on line 61, you can add your own code.
-  
+ 
  [Documentation](http://russellgordon.ca/CanvasGraphics/Documentation/) is available.
-
+ 
  */
 
 //begin writing my code
+canvas.highPerformance = true
+
+// triangles loop 
+extension Canvas {
+    func drawtriangle(xPosition: Double, yPosition: Double) {
+        var trianglevertices: [Point] = []
+        trianglevertices.append(Point(x: xPosition + 0, y: yPosition + 0)) //A
+        trianglevertices.append(Point(x: xPosition + 44.44, y: yPosition + 0)) //B
+        trianglevertices.append(Point(x: xPosition + 44.44, y: yPosition + 44.44)) //C
+        
+        canvas.drawCustomShape(with: trianglevertices)
+    }
+}
 
 
 
@@ -62,6 +76,9 @@ canvas.textColor = Color(hue: 200,
                          saturation: 0,
                          brightness: 80,
                          alpha: 100)
+
+// text
+
 canvas.drawText(message: "talking heads", at: Point(x: 20, y: 139), size: 43, kerning: 0)
 canvas.drawText(message: "friday, saturday, sunday", at: Point(x: 20, y: 30), size: 9, kerning: 0)
 canvas.drawText(message: "at cgb and omfug", at: Point(x: 150, y: 30), size: 9, kerning: 0)
@@ -77,12 +94,38 @@ canvas.drawText(message: "from brooklyn, the shirts", at: Point(x: 280, y: 20), 
 
 // triangles
 
-//for Xposition in stride(from:200, through: 600, by: 45){
+canvas.fillColor = Color(hue: 200,
+                         saturation: 0,
+                         brightness: 80,
+                         alpha: 100)
+
+
+for Xposition in stride(from:0, through: 600, by: 44.44){
     
-    //for Yposition in stride(from: 200, through: 600, by: 45){
+    for Yposition in stride(from: 200, through: 600, by: 44.44){
         
-//    }
-//  }
+        
+        
+        
+        if//white triangles
+            Yposition - Xposition >= 244
+        {
+            
+            canvas.fillColor = Color(hue: 200,
+                                     saturation: 0,
+                                     brightness: 80,
+                                     alpha: 100)
+            
+        } else {
+            
+            canvas.fillColor = .yellow
+            
+        }
+        canvas.drawtriangle(xPosition: Xposition, yPosition: Yposition)
+    }
+    
+}
+canvas.highPerformance = false
 /*:
  ## Show the Live View
  Don't see any results?
@@ -90,7 +133,7 @@ canvas.drawText(message: "from brooklyn, the shirts", at: Point(x: 280, y: 20), 
  Remember to show the Live View (1 then 2):
  
  ![timeline](timeline.png "Timeline")
-
+ 
  ## Use source control
  To keep your work organized, receive feedback, and earn a high grade in this course, regular use of source control is a must.
  

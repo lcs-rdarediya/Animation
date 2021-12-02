@@ -50,6 +50,23 @@ canvas.drawAxes(withScale: true, by: 50, color: .black)
  [Documentation](http://russellgordon.ca/CanvasGraphics/Documentation/) is available.
 
  */
+//add the abilty to draw atilted rectangle to thecanvas structure
+extension Canvas {
+    func drawtiltedrectangle(xPosition: Int, yPosition: Int) {
+        var rectanglevertices: [Point] = []
+        rectanglevertices.append(Point(x: xPosition + 0, y: yPosition + 30)) //A
+        rectanglevertices.append(Point(x: xPosition + 20, y: yPosition + 50)) //B
+        rectanglevertices.append(Point(x: xPosition + 50, y: yPosition + 20)) //C
+        rectanglevertices.append(Point(x: xPosition + 30, y: yPosition + 0)) //D
+        canvas.drawCustomShape(with: rectanglevertices)
+    }
+}
+
+
+
+
+
+
 //let fill color
 canvas.highPerformance = true
 
@@ -77,15 +94,17 @@ canvas.drawEllipse(at: Point(x: xPosition, y: yPosition), width: 5, height: 5)
         
         //draw tilted rectangles
         canvas.fillColor = .blue
-    
-        var rectanglevertices: [Point] = []
-        rectanglevertices.append(Point(x: xPosition + 0, y: yPosition + 30)) //A
-        rectanglevertices.append(Point(x: xPosition + 20, y: yPosition + 50)) //B
-        rectanglevertices.append(Point(x: xPosition + 50, y: yPosition + 20)) //C
-        rectanglevertices.append(Point(x: xPosition + 30, y: yPosition + 0)) //D
-        canvas.drawCustomShape(with: rectanglevertices)
+        canvas.drawtiltedrectangle(xPosition: xPosition, yPosition: yPosition)
+        
     }
 }
+
+//draw one more tilted rectangle
+
+canvas.fillColor = .yellow
+
+canvas.drawtiltedrectangle(xPosition: 200, yPosition: 220)
+
 canvas.highPerformance = false
 /*:
  ## Show the Live View
