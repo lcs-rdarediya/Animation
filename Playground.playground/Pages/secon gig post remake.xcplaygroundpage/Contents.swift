@@ -47,7 +47,7 @@ canvas.drawAxes(withScale: true, by: 50, color: .black)
 //begin writing my code
 canvas.highPerformance = true
 
-// triangles loop 
+// triangles loop
 extension Canvas {
     func drawtriangle(xPosition: Double, yPosition: Double) {
         var trianglevertices: [Point] = []

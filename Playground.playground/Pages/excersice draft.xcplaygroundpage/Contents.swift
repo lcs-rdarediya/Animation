@@ -1,6 +1,6 @@
 //: [Previous](@previous) / [Next](@next)
 /*:
-## Canvas size
+ ## Canvas size
  
  Set the size of your desired canvas by adjusting the constants on lines 7 and 8.
  */
@@ -46,9 +46,9 @@ canvas.drawAxes(withScale: true, by: 50, color: .black)
  ## Add your code
  
  Beginning on line 61, you can add your own code.
-  
+ 
  [Documentation](http://russellgordon.ca/CanvasGraphics/Documentation/) is available.
-
+ 
  */
 //add the abilty to draw atilted rectangle to thecanvas structure
 extension Canvas {
@@ -82,15 +82,15 @@ triangleVertices.append(Point(x: 25, y: 60))
 // begin wrting your code below
 
 
-for xPosition in stride(from: 0, through: 350, by: 50){
+for xPosition in stride(from: 0, through: 50, by: 50){
     
     for yPosition in stride(from: 0, through: 550, by: 50){
-
-//draw anchor
-
-canvas.fillColor = .red
-canvas.drawEllipse(at: Point(x: xPosition, y: yPosition), width: 5, height: 5)
-
+        
+        //draw anchor
+        
+        canvas.fillColor = .red
+        canvas.drawEllipse(at: Point(x: xPosition, y: yPosition), width: 5, height: 5)
+        
         
         //draw tilted rectangles
         canvas.fillColor = .blue
@@ -113,7 +113,7 @@ canvas.highPerformance = false
  Remember to show the Live View (1 then 2):
  
  ![timeline](timeline.png "Timeline")
-
+ 
  ## Use source control
  To keep your work organized, receive feedback, and earn a high grade in this course, regular use of source control is a must.
  
