@@ -108,17 +108,24 @@ extension Canvas {
     }
 }
 for xPosition in stride(from: 0, through: 50, by: 50){
-    for yPosition in stride(from: 175, through: 550, by: 50){
+    for yPosition in stride(from: 200, through: 550, by: 50){
     
     
     canvas.fillColor = .yellow
-    canvas.drawyellowstars(xPosition: 50, yPosition: 550)
+    canvas.drawyellowstars(xPosition: xPosition, yPosition: yPosition)
     
     
 }
 }
+for xPosition in stride(from: 300, through: 350, by: 50){
+    for yPosition in stride(from: 200, through: 550, by: 50){
+    
+    
+    canvas.fillColor = .yellow
+    canvas.drawyellowstars(xPosition: xPosition, yPosition: yPosition)
 
-
+}
+}
 
 
 
