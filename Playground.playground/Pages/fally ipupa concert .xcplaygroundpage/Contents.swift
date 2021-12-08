@@ -127,10 +127,19 @@ for xPosition in stride(from: 300, through: 350, by: 50){
 }
 }
 
+p.goToOrigin()
 
-
-
-
+canvas.textColor = Color(hue: 200,
+                         saturation: 20,
+                         brightness: 70,
+                         alpha: 100)
+canvas.drawText(message: "Fally Ipupa", at: Point(x: 50, y: 140), size: 40, kerning: 0)
+canvas.drawText(message: "A.K.A Aigle", at: Point(x: 275, y: 140), size: 20, kerning: 0)
+canvas.drawText(message: "18", at: Point(x: 25, y: 50), size: 20, kerning: 0)
+canvas.drawText(message: "april", at: Point(x: 19, y: 25), size: 20, kerning: 0)
+canvas.drawText(message: "2020", at: Point(x: 15, y: 0), size: 23, kerning: 0)
+canvas.drawText(message: "Stade des martyrs", at: Point(x: 220, y: 50), size: 20, kerning: 0)
+canvas.drawText(message: "Kinshasa", at: Point(x: 260, y: 25), size: 20, kerning: 0)
 
 
 
