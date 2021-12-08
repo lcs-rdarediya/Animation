@@ -99,11 +99,11 @@ canvas.drawRectangle(at: Point(x: 187, y: 475), width: 20, height: 100)
 extension Canvas {
     func drawyellowstars(xPosition: Int, yPosition: Int) {
         var star: [Point] = []
-        star.append(Point(x: xPosition + 5, y: yPosition + 0)) //A
-        star.append(Point(x: xPosition + 25, y: yPosition + 50)) //B
-        star.append(Point(x: xPosition + 45, y: yPosition + 0)) //C
-        star.append(Point(x: xPosition + 0, y: yPosition + 35)) //D
-        star.append(Point(x: xPosition + 50, y: yPosition + 35)) //E
+        star.append(Point(x: xPosition + 12, y: yPosition + 4)) //A
+        star.append(Point(x: xPosition + 25, y: yPosition + 45)) //B
+        star.append(Point(x: xPosition + 39, y: yPosition + 4)) //C
+        star.append(Point(x: xPosition + 4, y: yPosition + 30)) //D
+        star.append(Point(x: xPosition + 48, y: yPosition + 30)) //E
         canvas.drawCustomShape(with: star)
     }
 }
