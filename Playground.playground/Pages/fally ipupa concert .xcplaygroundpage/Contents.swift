@@ -109,12 +109,27 @@ extension Canvas {
 }
 for xPosition in stride(from: 0, through: 50, by: 50){
     for yPosition in stride(from: 200, through: 550, by: 50){
+        
+        
+        if yPosition.isMultiple(of: 100) {
+            canvas.fillColor = .orange
+            
+        } else{
+            canvas.fillColor = .yellow
+            
+        }
+        if xPosition.isMultiple(of: 0){
+            if yPosition.isMultiple(of: 100){
+                canvas.fillColor = .purple
+                
+            }else{
+                canvas.fillColor = .yellow
+            }
+        }
+        
+        canvas.drawyellowstars(xPosition: xPosition, yPosition: yPosition)
     
-    
-    canvas.fillColor = .yellow
-    canvas.drawyellowstars(xPosition: xPosition, yPosition: yPosition)
-    
-    
+
 }
 }
 for xPosition in stride(from: 300, through: 350, by: 50){
@@ -133,19 +148,18 @@ canvas.textColor = Color(hue: 200,
                          saturation: 20,
                          brightness: 70,
                          alpha: 100)
-canvas.drawText(message: "Fally Ipupa", at: Point(x: 50, y: 140), size: 40, kerning: 0)
-canvas.drawText(message: "A.K.A Aigle", at: Point(x: 275, y: 140), size: 20, kerning: 0)
-canvas.drawText(message: "18", at: Point(x: 25, y: 50), size: 20, kerning: 0)
-canvas.drawText(message: "april", at: Point(x: 19, y: 25), size: 20, kerning: 0)
-canvas.drawText(message: "2020", at: Point(x: 15, y: 0), size: 23, kerning: 0)
-canvas.drawText(message: "Stade des martyrs", at: Point(x: 220, y: 50), size: 20, kerning: 0)
-canvas.drawText(message: "Kinshasa", at: Point(x: 260, y: 25), size: 20, kerning: 0)
+canvas.drawText(message: "Fally Ipupa", at: Point(x: 40, y: 120), size: 40, kerning: 0)
+canvas.drawText(message: "A.K.A Aigle", at: Point(x: 270, y: 123), size: 20, kerning: 0)
+canvas.drawText(message: "18 april 2020", at: Point(x: 40, y: 50), size: 20, kerning: 0)
+canvas.drawText(message: "Stade des martyrs", at: Point(x: 210, y: 50), size: 20, kerning: 0)
+
+canvas.drawText(message: "Kinshasa", at: Point(x: 250, y: 25), size: 20, kerning: 0)
 
 
 
 
 // Show a grid
-canvas.drawAxes(withScale: true, by: 50, color: .white)
+//canvas.drawAxes(withScale: true, by: 50, color: .white)
 /*:
  ## Show the Live View
  Don't see any results?
