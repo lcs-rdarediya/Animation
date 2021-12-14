@@ -107,50 +107,93 @@ extension Canvas {
         canvas.drawCustomShape(with: star)
     }
 }
+
+// blue star
+let duskyBlue = Color(hue: 209,
+                      saturation: 18,
+                      brightness: 45,
+                      alpha: 100)
+// green star
+let duskyGreen = Color(hue: 158,
+                       saturation: 35,
+                       brightness: 27,
+                       alpha: 100)
+//brown star
+let duskybrown = Color(hue: 20,
+                       saturation: 36,
+                       brightness: 40,
+                       alpha: 100)
+
+// left 2 colums of stars
 for xPosition in stride(from: 0, through: 50, by: 50){
     for yPosition in stride(from: 200, through: 550, by: 50){
         
         
         if yPosition.isMultiple(of: 100) {
-            canvas.fillColor = .orange
+            canvas.fillColor = duskyBlue
+            
+            
             
         } else{
-            canvas.fillColor = .yellow
+            canvas.fillColor = duskybrown
             
         }
         if xPosition.isMultiple(of: 0){
             if yPosition.isMultiple(of: 100){
-                canvas.fillColor = .purple
+                canvas.fillColor = duskyGreen
+                
                 
             }else{
-                canvas.fillColor = .yellow
+                canvas.fillColor = duskybrown
             }
         }
         
         canvas.drawyellowstars(xPosition: xPosition, yPosition: yPosition)
-    
+        
+        
+    }
+}
 
-}
-}
+// right 2 colums of stars
+
 for xPosition in stride(from: 300, through: 350, by: 50){
     for yPosition in stride(from: 200, through: 550, by: 50){
-    
-    
-    canvas.fillColor = .yellow
-    canvas.drawyellowstars(xPosition: xPosition, yPosition: yPosition)
-
-}
+        
+        
+        
+        if yPosition.isMultiple(of: 100) {
+            canvas.fillColor = duskyGreen
+            
+        } else{
+            canvas.fillColor = duskybrown
+            
+        }
+        if xPosition.isMultiple(of: 300){
+            if yPosition.isMultiple(of: 100){
+                canvas.fillColor = duskyBlue
+                
+            }else{
+                canvas.fillColor = duskybrown
+            }
+        }
+        canvas.drawyellowstars(xPosition: xPosition, yPosition: yPosition)
+        
+    }
 }
 
 p.goToOrigin()
 
+// text on the bottom
 canvas.textColor = Color(hue: 200,
                          saturation: 20,
                          brightness: 70,
                          alpha: 100)
-canvas.drawText(message: "Fally Ipupa", at: Point(x: 40, y: 120), size: 40, kerning: 0)
-canvas.drawText(message: "A.K.A Aigle", at: Point(x: 270, y: 123), size: 20, kerning: 0)
-canvas.drawText(message: "18 april 2020", at: Point(x: 40, y: 50), size: 20, kerning: 0)
+canvas.drawText(message: "Fally Ipupa", at: Point(x: 40, y: 110), size: 40, kerning: 0)
+
+canvas.drawText(message: "A.K.A Aigle", at: Point(x: 270, y: 113), size: 20, kerning: 0)
+
+canvas.drawText(message: "18 april 2020", at: Point(x: 42, y: 50), size: 20, kerning: 0)
+
 canvas.drawText(message: "Stade des martyrs", at: Point(x: 210, y: 50), size: 20, kerning: 0)
 
 canvas.drawText(message: "Kinshasa", at: Point(x: 250, y: 25), size: 20, kerning: 0)
@@ -159,7 +202,7 @@ canvas.drawText(message: "Kinshasa", at: Point(x: 250, y: 25), size: 20, kerning
 
 
 // Show a grid
-//canvas.drawAxes(withScale: true, by: 50, color: .white)
+canvas.drawAxes(withScale: true, by: 50, color: .white)
 /*:
  ## Show the Live View
  Don't see any results?
